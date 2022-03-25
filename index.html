@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <style>
+        .nav {
+            width: 30%;
+            max-width: 250px;
+            float: left;
+        }
+
+        #cle {
+            width: 100%;
+            max-width: 250px;
+        }
+
+
+
+
+        .box {
+            margin-left: 10px;
+            width: 60%;
+
+            height: 300px;
+
+        }
+
+
+
+
+
+
+
+
+
+        @media (max-width: 1023px) {
+            .box {
+                width: 60%;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .box {
+                width: 300px;
+                height: 100px;
+            }
+
+            #boxFrom {
+                width: 300px;
+                height: 100px;
+            }
+        }
+
+        @media(max-width: 510px){
+            #tranBtn{
+                margin-left: 10px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav nav-pills nav-stacked">
+        <li><a class="flex-1 pl-4 md:pl-8 font-display text-3xl font-black text-white relative z-10 pt-2"
+                href="/">Lumine<span class="text-xl text-primary">✖translation</span></a></li>
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+        <li><img id="cle"
+                src="https://upload-os-bbs.hoyolab.com/upload/2021/06/10/1015598/4d3280ec7e6dd898b5acd9b76440afdd_6789034556239763083.jpg?x-oss-process=image/resize,s_740/quality,q_80/auto-orient,0/interlace,1/format,jpg">
+        </li>
+    </ul>
+
+    
+    <br><br>
+    <div>
+        <form id="boxForm" action="">
+
+            <textarea class="box"></textarea>
+            <button id="tranBtn">translation</button>
+        </form>
+    </div>
+
+    <div>
+        <textarea class="box"></textarea>
+    </div>
+
+
+
+
+</body>
+
+</html>

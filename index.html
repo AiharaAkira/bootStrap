@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -20,6 +20,7 @@
 
 
     <style>
+        @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
         .nav {
             width: 30%;
             max-width: 250px;
@@ -44,7 +45,7 @@
 
         #result_translation{
             margin-left: 10px;
-            width: 60%;
+            width: 100%;
 
             height: 300px;
         }
@@ -87,6 +88,60 @@
             margin-left: 10px;
             color: cadetblue;
         }
+
+        .w-btn-blue {
+            background-color: #6aafe6;
+            color: #d4dfe6;
+        }
+        .w-btn:hover {
+            letter-spacing: 2px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+        
+        .w-btn-outline:hover {
+            letter-spacing: 2px;
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .w-btn-blue-outline {
+            border: 3px solid #6aafe6;
+            color: #6e6e6e;
+        }
+
+        .w-btn-blue-outline:hover {
+            background-color: #6aafe6;
+            color: #d4dfe6;
+        }
+
+        .w-btn {
+            position: relative;
+            border: none;
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 15px;
+            font-family: "paybooc-Light", sans-serif;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.25s;
+        }
+        
+        .w-btn-outline {
+            position: relative;
+            padding: 15px 30px;
+            border-radius: 15px;
+            font-family: "paybooc-Light", sans-serif;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.25s;
+        }
+
+        nav{
+            float: right;
+        }
     </style>
 </head>
 
@@ -94,51 +149,82 @@
     <!-- Start your code here --> 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     
-    <ul class="nav nav-pills nav-stacked">
-        <li><a class="flex-1 pl-4 md:pl-8 font-display text-3xl font-black text-white relative z-10 pt-2"
-                href="/">Lumine<span class="text-xl text-primary">✖translation</span></a></li>
-        <li role="presentation" class="active"><a href="#">translator</a></li>
-        <li role="presentation"><a href="#">Github</a></li>
-        <li role="presentation"><a href="#">reset</a></li>
-        <li><img id="cle"
-                src="https://upload-os-bbs.hoyolab.com/upload/2021/06/10/1015598/4d3280ec7e6dd898b5acd9b76440afdd_6789034556239763083.jpg?x-oss-process=image/resize,s_740/quality,q_80/auto-orient,0/interlace,1/format,jpg">
-        </li>
-    </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-8">
+                <div id="title">
+                    <h1><b> &nbsp; &nbsp;translator</b></h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a class="flex-1 pl-4 md:pl-8 font-display text-3xl font-black text-white relative z-10 pt-2"
+                           href="/">Lumine<span class="text-xl text-primary">✖translation</span></a></li>
+                    <li role="presentation" class="active"><a href="#">translator</a></li>
+                    <li role="presentation"><a href="#">Github</a></li>
+                    <li role="presentation"><a href="#">reset</a></li>
+                    <li><img id="cle"
+                            src="https://upload-os-bbs.hoyolab.com/upload/2021/06/10/1015598/4d3280ec7e6dd898b5acd9b76440afdd_6789034556239763083.jpg?x-oss-process=image/resize,s_740/quality,q_80/auto-orient,0/interlace,1/format,jpg">
+                    </li>
+                </ul>
+            
+                
+                <br><br>
+    
+            </div>
+            <div class="col-8">
+                <div>
+                    <form id="transExForm" name="transExForm">
+                        &nbsp;&nbsp;&nbsp;번역할 언어:  <select id="src_lang" name="src_lang">
+                            <option value="kr">한국어</option>
+                            <option value="en">영어</option>
+                            <option value="jp">일본어</option>
+                        </select>
+                        &nbsp;&nbsp; 번역 결과 언어: <select id="target_lang" name="target_lang">
+                            <option value="en">영어</option>
+                            <option value="kr">한국어</option>
+                            <option value="jp">일본어</option>
+                        </select> <br>
+                         <br>
+            
+            
+            
+                         <h2>번역할 내용</h2><br>
+                        <textarea id="query" name="query"></textarea>
+                    </form>
+                </div>
+                
+                
+                
+                
+            </div>
+        </div>
+        <div class="row">
+    
+            <div class="col-4"></div>
+            <div class="col-8">
+                <div>
+                    <nav> <button type="button" class="w-btn w-btn-blue"  onclick="process()">translation</button></nav>
+                   
+                    <h2>번역완료된 내용</h2><br>
+                    <textarea id="result_translation" name="result_translation"></textarea>
+                </div>
+                
+            </div>
+        </div>
+        
+      </div>
 
-    <div id="title">
-        <h1><b> &nbsp; &nbsp;translator</b></h1>
-    </div>
+   
+    
+     
 
-    <br><br>
-    <div>
-        <form id="transExForm" name="transExForm">
-            번역할 언어:  <select id="src_lang" name="src_lang">
-                <option value="kr">한국어</option>
-                <option value="en">영어</option>
-                <option value="jp">일본어</option>
-            </select>
-            번역 결과 언어: <select id="target_lang" name="target_lang">
-                <option value="en">영어</option>
-                <option value="kr">한국어</option>
-                <option value="jp">일본어</option>
-            </select> <br>
-             <br>
-
-
-
-             <h2>번역할 내용</h2><br>
-            <textarea id="query" name="query"></textarea>
-        </form>
-    </div>
     
     
     
-    <div>
-        <button onclick="process()">translation</button>
-        <h2>번역완료된 내용</h2><br>
-        <textarea id="result_translation" name="result_translation"></textarea>
-    </div>
-
 
     <script type="text/javascript">
 
